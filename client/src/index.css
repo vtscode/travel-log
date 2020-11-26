@@ -1,3 +1,7 @@
+:root{
+  --color-red-1 : #c41234;
+  --color-yellow-1 : #f8c102;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,4 +12,29 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+.marker{
+  transform: translate(-50%,-100%);
+}
+.marker.yellow path {
+  fill:var(--color-yellow-1);
+}
+.marker.red path{
+  fill: var(--color-red-1);
+}
+.popup{
+  max-width: 40vw;
+  padding: .5rem;
+}
+.entry-form label,
+.entry-form input, 
+.entry-form textarea,
+.entry-form button {
+  font-size: 1rem;
+  margin: .5rem 0;
+  display: block;
+  width: 100%;
+}
+.error-msg{
+  color: var(--color-red-1);
 }

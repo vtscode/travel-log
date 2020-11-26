@@ -14,6 +14,21 @@ const listLogEntries = async () => {
     console.log(error);
   }
 };
+const createLogEntry = async (params) => {
+  try {
+    const resp = await fetch(`${API_URL}/api/logs`,{
+      method : 'POST',
+      headers:{
+        'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify(params),
+      signal : signal
+    });
+    return resp.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const abortFetching = () => {
   console.log('Now aborting');
@@ -21,4 +36,4 @@ const abortFetching = () => {
   controller.abort();
 }
 
-export { abortFetching,listLogEntries };
+export { abortFetching,listLogEntries,createLogEntry };
